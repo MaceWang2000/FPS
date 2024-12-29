@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+
+    
+    {
+      "name": "GDScript: Launch Pinned File",
+      "type": "godot",
+      "request": "launch",
+      "scene": "res://Scenes/level_2.tscn",
+      "project": "",
+      "additional_options": "",
+    },
+    {
+      "name": "GDScript: Launch Current File",
+      "type": "godot",
+      "request": "launch",
+      "scene": "current",
+      "project": "",
+      "additional_options": ""
+    },
+    
+  ]
+}

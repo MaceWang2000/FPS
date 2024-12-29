@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="ImmsInventory" load_steps=11 format=3 uid="uid://d3ga1hllwe3wo"]
+
+[ext_resource type="Script" uid="uid://surhtiuvh80c" path="res://Scripts/Inventory/inventory.gd" id="1_bf1vb"]
+[ext_resource type="Script" uid="uid://bmo7mi6qlexwf" path="res://Scripts/Inventory/inventory_slot_PD.gd" id="2_5hkdg"]
+[ext_resource type="Script" uid="uid://cn8xkskwupflt" path="res://Scripts/Inventory/inventory_item_PD.gd" id="3_cy505"]
+[ext_resource type="Texture2D" uid="uid://2471v2jbq3hl" path="res://Assets/Texture/Icon/#1 - Transparent Icons.png" id="4_t5non"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckhtc"]
+atlas = ExtResource("4_t5non")
+region = Rect2(160, 608, 32, 32)
+
+[sub_resource type="Resource" id="Resource_ouc60"]
+script = ExtResource("3_cy505")
+name = "蓝色药水"
+description = "这是一个蓝色药水！"
+stackable = true
+texture = SubResource("AtlasTexture_ckhtc")
+drop_scene = null
+metadata/_custom_type_script = ExtResource("3_cy505")
+
+[sub_resource type="Resource" id="Resource_1gqcc"]
+script = ExtResource("2_5hkdg")
+item_data = SubResource("Resource_ouc60")
+quantity = 2
+metadata/_custom_type_script = ExtResource("2_5hkdg")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy505"]
+atlas = ExtResource("4_t5non")
+region = Rect2(128, 608, 32, 32)
+
+[sub_resource type="Resource" id="Resource_t5non"]
+script = ExtResource("3_cy505")
+name = "红色药水"
+description = "这是一个红色药水！"
+stackable = true
+texture = SubResource("AtlasTexture_cy505")
+drop_scene = null
+metadata/_custom_type_script = ExtResource("3_cy505")
+
+[sub_resource type="Resource" id="Resource_ckhtc"]
+script = ExtResource("2_5hkdg")
+item_data = SubResource("Resource_t5non")
+quantity = 1
+metadata/_custom_type_script = ExtResource("2_5hkdg")
+
+[resource]
+script = ExtResource("1_bf1vb")
+slot_datas = Array[ExtResource("2_5hkdg")]([SubResource("Resource_1gqcc"), SubResource("Resource_ckhtc")])
+metadata/_custom_type_script = ExtResource("1_bf1vb")

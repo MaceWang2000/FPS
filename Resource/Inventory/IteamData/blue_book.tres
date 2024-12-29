@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InventoryItemPD" load_steps=4 format=3 uid="uid://c28k135pign02"]
+
+[ext_resource type="Script" uid="uid://cn8xkskwupflt" path="res://Scripts/Inventory/inventory_item_PD.gd" id="1_egr8e"]
+[ext_resource type="Texture2D" uid="uid://2471v2jbq3hl" path="res://Assets/Texture/Icon/#1 - Transparent Icons.png" id="2_1qmqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk0ht"]
+atlas = ExtResource("2_1qmqn")
+region = Rect2(0, 416, 32, 32)
+
+[resource]
+script = ExtResource("1_egr8e")
+name = "蓝皮书"
+description = "这是一个蓝皮书"
+stackable = true
+texture = SubResource("AtlasTexture_vk0ht")
+drop_scene = null
+metadata/_custom_type_script = ExtResource("1_egr8e")

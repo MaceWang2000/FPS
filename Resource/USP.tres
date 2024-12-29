@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=2 format=3 uid="uid://qvgm5tufk4fn"]
+
+[ext_resource type="Script" path="res://Scripts/Player/weapons.gd" id="1_j4q81"]
+
+[resource]
+script = ExtResource("1_j4q81")
+name = &"USP"
+position = Vector3(0.03, -0.177, 0.071)
+rotation = Vector3(0, 165, -4.3)

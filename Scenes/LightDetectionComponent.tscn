@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://xnmvtmk4rckn"]
+
+[ext_resource type="Script" path="res://Scripts/light_detection_component.gd" id="1_w0d00"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8i2y4"]
+cull_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fm0b8"]
+material = SubResource("StandardMaterial3D_8i2y4")
+size = Vector2(1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbn5l"]
+cull_mode = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yq8fn"]
+material = SubResource("StandardMaterial3D_lbn5l")
+top_radius = 0.0
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0vq1"]
+cull_mode = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_tkhm4"]
+lightmap_size_hint = Vector2i(11, 6)
+material = SubResource("StandardMaterial3D_m0vq1")
+height = 1.2
+radial_segments = 4
+rings = 1
+
+[node name="LightDetectionCompoment" type="SubViewport" node_paths=PackedStringArray("light_detection", "sub_viewport")]
+handle_input_locally = false
+size = Vector2i(16, 16)
+render_target_update_mode = 4
+script = ExtResource("1_w0d00")
+light_detection = NodePath("LightDetection")
+sub_viewport = NodePath(".")
+
+[node name="LightDetection" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="LightDetection"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.3, 0)
+fov = 64.965
+
+[node name="MeshPlane" type="MeshInstance3D" parent="LightDetection/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5.24537e-08, -1.2)
+visible = false
+mesh = SubResource("PlaneMesh_fm0b8")
+
+[node name="MeshCone" type="MeshInstance3D" parent="LightDetection/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.37114e-08, -1)
+visible = false
+mesh = SubResource("CylinderMesh_yq8fn")
+
+[node name="MeshOctahedron" type="MeshInstance3D" parent="LightDetection/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.80825e-08, -1.1)
+visible = false
+mesh = SubResource("SphereMesh_tkhm4")

@@ -1,0 +1,221 @@
+{
+	"categories": [
+		{
+			"uuid": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"title": "Todo",
+			"color": "8dcaff"
+		},
+		{
+			"uuid": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"title": "Done",
+			"color": "37ee31"
+		},
+		{
+			"uuid": "f6f536ec-eb2f-451b-ae96-51abda7e38de",
+			"title": "Doing",
+			"color": "ff0c0c"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "572c54ae-4c8a-4fd7-825a-885ee95f9414",
+			"title": "Todo",
+			"tasks": [
+				"9958c7c1-9ca5-4809-b552-1916408c4d3b",
+				"94886598-dceb-4bc9-bd32-e01190e99757",
+				"bce3cd89-ad10-4293-b365-1272b9c56caa",
+				"5523d73b-cbdf-45a2-acea-6bc91050f13a",
+				"5e33a79d-bbdc-4a81-9b4d-06bdaf41fedf",
+				"3ead816e-8aa7-4c2f-8303-537b3b871ace",
+				"e1f75e73-7ff4-4692-860f-a48fdd96579b",
+				"3a57a136-0b8e-4d22-b0a4-89ea89e73ecc"
+			]
+		},
+		{
+			"uuid": "fed85ea7-4057-4f31-b970-af48bae684da",
+			"title": "Doing",
+			"tasks": [
+				"6b06c8f0-e9a3-47d3-b271-30e1dedb7c8d"
+			]
+		},
+		{
+			"uuid": "ec61f0c0-2904-4169-9e77-8fec946d809a",
+			"title": "Done",
+			"tasks": [
+				"4842287d-34fc-43d6-80ba-9f32552932c4",
+				"a5cc9275-43c6-40b1-86de-d3887fa5e2c8",
+				"696dc9ee-8776-49d9-8ae6-c2dbc7840cd6",
+				"15779234-adb0-447e-93a9-522f190f155f",
+				"47894940-db65-44e1-9444-6f16dd823f33",
+				"2a09f112-00ec-4549-8cda-394402826abd",
+				"f25edb87-d9f4-406f-a4e2-a1d1d551a9c5",
+				"6ab9bd78-7e94-4a94-80f3-23373dca1423",
+				"d7261cf1-dbaa-4e3d-bf98-cc6f9f21a89e"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "f25edb87-d9f4-406f-a4e2-a1d1d551a9c5",
+			"title": "重构interaction",
+			"description": "必须对一些东西进行抽象化",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "4842287d-34fc-43d6-80ba-9f32552932c4",
+			"title": "交互指示Shder",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "9958c7c1-9ca5-4809-b552-1916408c4d3b",
+			"title": "重构怪物AI",
+			"description": "",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": []
+		},
+		{
+			"uuid": "47894940-db65-44e1-9444-6f16dd823f33",
+			"title": "交互UI提示",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "a5cc9275-43c6-40b1-86de-d3887fa5e2c8",
+			"title": "修复一些IneractionBug",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "94886598-dceb-4bc9-bd32-e01190e99757",
+			"title": "Player与Rigidbody碰撞交互",
+			"description": "大部分解决了，有一部分小问题，角色跳到刚体上，离开刚体，刚体会移动。初步判断原因为角色不断受到向下的重力，离开刚体，重力作用于刚体，所以造成移动",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": []
+		},
+		{
+			"uuid": "2a09f112-00ec-4549-8cda-394402826abd",
+			"title": "交互音效",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "696dc9ee-8776-49d9-8ae6-c2dbc7840cd6",
+			"title": "对食物进行交互",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "15779234-adb0-447e-93a9-522f190f155f",
+			"title": "重构UI系统",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "6ab9bd78-7e94-4a94-80f3-23373dca1423",
+			"title": "其他场景道具的交互（灯， 门）",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "5523d73b-cbdf-45a2-acea-6bc91050f13a",
+			"title": "近战武器系统",
+			"description": "",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": []
+		},
+		{
+			"uuid": "bce3cd89-ad10-4293-b365-1272b9c56caa",
+			"title": "PS1美术风格",
+			"description": "不一定是PS1，PS1有些过于复古，不满足游戏需要，可以是半条命风格且必须科幻题材，当然也可以是生化奇兵，总体来说，美术风格待定",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": [
+				{
+					"details": "待定",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "6b06c8f0-e9a3-47d3-b271-30e1dedb7c8d",
+			"title": "武器管理系统",
+			"description": "实现掠食武器管理方式，所以应该先有库存系统，才有武器管理系统\n库存系统太难了！！\n想要重做库存系统\n",
+			"category": "f6f536ec-eb2f-451b-ae96-51abda7e38de",
+			"steps": [
+				{
+					"details": "库存系统",
+					"done": false
+				},
+				{
+					"details": "武器管理系统",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "d7261cf1-dbaa-4e3d-bf98-cc6f9f21a89e",
+			"title": "重构Player代码，不使用有限状态机",
+			"description": "",
+			"category": "be6d778e-9178-4872-a2d1-699d5f3a2c85",
+			"steps": []
+		},
+		{
+			"uuid": "5e33a79d-bbdc-4a81-9b4d-06bdaf41fedf",
+			"title": "Blender手枪建模",
+			"description": "先跟着教程做一个手枪模型，在按照自己理解创造手枪模型，手枪必须是科幻类型的，像是掠食，子弹数量的UI显示在枪械中",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": [
+				{
+					"details": "跟随教程",
+					"done": false
+				},
+				{
+					"details": "建模手枪",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "3ead816e-8aa7-4c2f-8303-537b3b871ace",
+			"title": "子弹的UI显示",
+			"description": "类似掠食那种显示风格，提升玩家沉浸感",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": []
+		},
+		{
+			"uuid": "e1f75e73-7ff4-4692-860f-a48fdd96579b",
+			"title": "调整开关门机制",
+			"description": "会有BUG",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": []
+		},
+		{
+			"uuid": "3a57a136-0b8e-4d22-b0a4-89ea89e73ecc",
+			"title": "改进交互着色器提示",
+			"description": "交互时，模型出现白色边缘",
+			"category": "5a16fb01-bf61-4114-838f-4bdb8b900d45",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"572c54ae-4c8a-4fd7-825a-885ee95f9414"
+			],
+			[
+				"fed85ea7-4057-4f31-b970-af48bae684da"
+			],
+			[
+				"ec61f0c0-2904-4169-9e77-8fec946d809a"
+			]
+		]
+	}
+}

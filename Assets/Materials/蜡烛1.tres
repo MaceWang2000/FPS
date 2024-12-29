@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://7ke20nbmm7yf"]
+
+[ext_resource type="Texture2D" uid="uid://dwklw3i0x0cle" path="res://Assets/Texture/ScenesProp/蜡烛_brass_candleholders_02_diff.png" id="1_mkdu4"]
+[ext_resource type="Texture2D" uid="uid://nwqph12b7c8o" path="res://Assets/Texture/ScenesProp/蜡烛_brass_candleholders_02_metal-brass_candleholders_02_rough.png" id="2_8ceh4"]
+[ext_resource type="Texture2D" uid="uid://dwtm3kl0bcguh" path="res://Assets/Texture/ScenesProp/蜡烛_brass_candleholders_02_nor_gl.png" id="3_1tkv5"]
+
+[resource]
+resource_name = "brass_candleholders_02"
+cull_mode = 2
+albedo_texture = ExtResource("1_mkdu4")
+metallic = 1.0
+metallic_texture = ExtResource("2_8ceh4")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_8ceh4")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_1tkv5")

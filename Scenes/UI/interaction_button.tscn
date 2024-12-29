@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2j1d3w8d1hnp"]
+
+[ext_resource type="Script" path="res://Scenes/UI/DynamicInputIcon.gd" id="1_7nacl"]
+[ext_resource type="Texture2D" uid="uid://bp2l7ksd16pme" path="res://Assets/Texture/ui/InputIconSheet_Kenney_KeyboardMouse.png" id="2_i0vgd"]
+
+[node name="InteractionButton" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+centered = false
+hframes = 12
+vframes = 12
+frame = 6
+script = ExtResource("1_7nacl")
+action_name = "interact"
+keyboard_icons = ExtResource("2_i0vgd")

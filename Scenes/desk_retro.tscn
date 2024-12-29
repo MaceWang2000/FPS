@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=4 uid="uid://dnds7tn5bkhna"]
+
+[ext_resource type="Texture2D" uid="uid://btht3hvkuxfy2" path="res://Assets/Mesh/desk_retro_Wood_05.jpg" id="1_w3026"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6nys"]
+resource_name = "Wood_05"
+cull_mode = 2
+albedo_texture = ExtResource("1_w3026")
+texture_filter = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t21hs"]
+_surfaces = [{
+"aabb": AABB(-1.79047, -1.25032, -1.13614, 3.57938, 1.46868, 2.27033),
+"format": 34896613377,
+"index_count": 228,
+"index_data": PackedByteArray("AAADAAIAAAABAAMAAgAHAAYAAgADAAcABgAFAAQABgAHAAUABAABAAAABAAFAAEAAgAEAAAAAgAGAAQABwABAAUABwADAAEACAALAAoACAAJAAsACgAPAA4ACgALAA8ADgANAAwADgAPAA0ADAAJAAgADAANAAkACgAMAAgACgAOAAwAEAATABIAEAARABMAEgAXABYAEgATABcAFgAVABQAFgAXABUAFAARABAAFAAVABEAEgAUABAAEgAWABQAGAAbABoAGAAZABsAGgAfAB4AGgAbAB8AHgAdABwAHgAfAB0AHAAZABgAHAAdABkAGgAcABgAGgAeABwAIAAjACIAIAAhACMAIgAnACYAIgAjACcAJgAlACQAJgAnACUAJAAhACAAJAAlACEAIgAkACAAIgAmACQAKgAvAC4AKgArAC8ALAApACgALAAtACkAKgAsACgAKgAuACwAMgA3ADYAMgAzADcANAAxADAANAA1ADEAMgA0ADAAMgA2ADQAOgA/AD4AOgA7AD8APAA5ADgAPAA9ADkAOgA8ADgAOgA+ADwAQgBHAEYAQgBDAEcARABBAEAARABFAEEAQgBEAEAAQgBGAEQA"),
+"name": "Wood_05",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("//8J4v//AAD///////8AAP//CeIAAAAA/////wAAAAAAAAni//8AAAAA/////wAAAAAJ4gAAAAAAAP//AAAAAJ0TAAChHQAAnROW76EdAACdEwAA/wkAAJ0Tlu//CQAAKQcAAKEdAAApB5bvoR0AACkHAAD/CQAAKQeW7/8JAACdEwAA5PYAAJ0Tlu/k9gAAnRMAAELjAACdE5bvQuMAACkHAADk9gAAKQeW7+T2AAApBwAAQuMAACkHlu9C4wAAkPkAAOT2AACQ+Zbv5PYAAJD5AABC4wAAkPmW70LjAAAc7QAA5PYAABztlu/k9gAAHO0AAELjAAAc7ZbvQuMAAJD5AAChHQAAkPmW76EdAACQ+QAA/wkAAJD5lu//CQAAHO0AAKEdAAAc7ZbvoR0AABztAAD/CQAAHO2W7/8JAADO73jM6PIAAM7vfufo8gAAzu94zHbmAADO737nduYAAEQQeMzo8gAARBB+5+jyAABEEHjMduYAAEQQfud25gAAzu94zFEaAADO737nURoAAM7veMzgDQAAzu9+5+ANAABEEHjMURoAAEQQfudRGgAARBB4zOANAABEEH7n4A0AALLuU8lI5gAAsu5Z5EjmAACW9lPJSOYAAJb2WeRI5gAAsu5TydAZAACy7lnk0BkAAJb2U8nQGQAAlvZZ5NAZAABRCVPJSOYAAFEJWeRI5gAANhFTyUjmAAA2EVnkSOYAAFEJU8nQGQAAUQlZ5NAZAAA2EVPJ0BkAADYRWeTQGQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_htmsx"]
+resource_name = "desk_retro_Cube_344"
+_surfaces = [{
+"aabb": AABB(-1.79047, -1.25032, -1.13614, 3.57938, 1.46868, 2.27033),
+"attribute_data": PackedByteArray("AADFVwAAL9HPLsVXAAB6SwAAL9HPLnpLAADFVwAAzy4v0cVXAAB6SwAAzy4v0XpL///FV///L9HPLsVX//96S///L9HPLnpL///FV///zy4v0cVX//96S///zy4v0XpLYeyEtGHsmkFkvoS0Yew2UmS+NlJh7IS0YewmNdjKhLRh7DZS2Mo2UtX4hLTV+JpBZL6EtNX4NlJkvjZS1fiEtNX4JjXYyoS01fg2UtjKNlJh7IS0Yexoy5Y0hLRh7DZSljQ2UmHshLRh7PW+CUGEtGHsNlIJQTZS1fiEtNX4aMuWNIS01fg2UpY0NlLV+IS01fj1vglBhLTV+DZSCUE2Um4GhLRuBmjLljSEtG4GNlKWNDZSbgaEtG4G9b4JQYS0bgY2UglBNlLiEoS04hJoy5Y0hLTiEjZSljQ2UuIShLTiEvW+CUGEtOISNlIJQTZSbgaEtG4GmkFkvoS0bgY2UmS+NlJuBoS0bgYmNdjKhLRuBjZS2Mo2UuIShLTiEppBZL6EtOISNlJkvjZS4hKEtOISJjXYyoS04hI2UtjKNlIwEJ5gMBDiyDAQiFUwEJ5gMBD9wDAQiFW6755guu/iyLrviFW6755guu/9wLrviFUwEJ5gMBCBPzAQiFUwEJ5gMBCcNzAQiFW6755guu+BP7rviFW6755guu+cN7rviFVMEd/AHz/oYR8/0lZoCd/AHz/oYR8/0lZMES8/z8DoYc/A0lZoCS8/z8DoYc/A0lat9t/AHz/oYR8/0lbI7t/AHz/oYR8/0lat9i8/z8DoYc/A0lbI7i8/z8DoYc/A0lY="),
+"format": 34896613399,
+"index_count": 228,
+"index_data": PackedByteArray("AgALAAgAAgAFAAsABgAVABIABgAJABUAFAARAA4AFAAXABEADAADAAAADAAPAAMABwANAAEABwATAA0AFgAEABAAFgAKAAQAGgAhAB8AGgAcACEAHQAqACcAHQAgACoAKQAmACQAKQArACYAIgAbABgAIgAlABsAHgAjABkAHgAoACMALgA1ADMALgAwADUAMQA+ADsAMQA0AD4APQA6ADgAPQA/ADoANgAvACwANgA5AC8AMgA3AC0AMgA8ADcAQgBJAEcAQgBEAEkARQBSAE8ARQBIAFIAUQBOAEwAUQBTAE4ASgBDAEAASgBNAEMARgBLAEEARgBQAEsAVgBdAFsAVgBYAF0AWQBmAGMAWQBcAGYAZQBiAGAAZQBnAGIAXgBXAFQAXgBhAFcAWgBfAFUAWgBkAF8AawBzAHEAawBtAHMAbgBqAGgAbgBwAGoAbABvAGkAbAByAG8AdwB/AH0AdwB5AH8AegB2AHQAegB8AHYAeAB7AHUAeAB+AHsAhACLAIoAhACFAIsAhwCCAIEAhwCIAIIAgwCGAIAAgwCJAIYAkACXAJYAkACRAJcAkwCOAI0AkwCUAI4AjwCSAIwAjwCVAJIA"),
+"material": SubResource("StandardMaterial3D_h6nys"),
+"name": "Wood_05",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 152,
+"vertex_data": PackedByteArray("//8J4v//AAD//wni////////CeL///+/////////AAD///////8AAP////////+///8J4gAA/////wniAAD/////CeIAAP+//////wAA////////AAAAAP////8AAP+/AAAJ4v//AAAAAAni/////wAACeL//wAAAAD/////AAAAAP////8AAAAA/////wAAAAAJ4gAA//8AAAniAAD//wAACeIAAAAAAAD//wAA//8AAP//AAAAAAAA//8AAAAAnRMAAKEdAACdEwAAoR3//50TAAChHf+/nROW76EdAACdE5bvoR3/v50TAAD/Cf//nRMAAP8J//+dEwAA/wn/v50Tlu//Cf//nROW7/8J/78pBwAAoR0AACkHAAChHf//KQcAAKEdAAApB5bvoR0AACkHlu+hHQAAKQcAAP8J//8pBwAA/wn//ykHAAD/CQAAKQeW7/8J//8pB5bv/wkAAJ0TAADk9gAAnRMAAOT2//+dEwAA5Pb/v50Tlu/k9gAAnROW7+T2/7+dEwAAQuP//50TAABC4///nRMAAELj/7+dE5bvQuP//50Tlu9C4/+/KQcAAOT2AAApBwAA5Pb//ykHAADk9gAAKQeW7+T2AAApB5bv5PYAACkHAABC4///KQcAAELj//8pBwAAQuMAACkHlu9C4///KQeW70LjAACQ+QAA5PYAAJD5AADk9v//kPkAAOT2/7+Q+Zbv5PYAAJD5lu/k9v+/kPkAAELj//+Q+QAAQuP//5D5AABC4/+/kPmW70Lj//+Q+ZbvQuP/vxztAADk9gAAHO0AAOT2//8c7QAA5PYAABztlu/k9gAAHO2W7+T2AAAc7QAAQuP//xztAABC4///HO0AAELjAAAc7ZbvQuP//xztlu9C4wAAkPkAAKEdAACQ+QAAoR3//5D5AAChHf+/kPmW76EdAACQ+ZbvoR3/v5D5AAD/Cf//kPkAAP8J//+Q+QAA/wn/v5D5lu//Cf//kPmW7/8J/78c7QAAoR0AABztAAChHf//HO0AAKEdAAAc7ZbvoR0AABztlu+hHQAAHO0AAP8J//8c7QAA/wn//xztAAD/CQAAHO2W7/8J//8c7Zbv/wkAAM7veMzo8gAAzu94zOjy///O737n6PIAAM7veMx25v//zu94zHbm///O737ndub//0QQeMzo8gAARBB4zOjy//9EEH7n6PIAAEQQeMx25v//RBB4zHbm//9EEH7ndub//87veMxRGgAAzu94zFEa///O737nURoAAM7veMzgDf//zu94zOAN///O737n4A3//0QQeMxRGgAARBB4zFEa//9EEH7nURoAAEQQeMzgDf//RBB4zOAN//9EEH7n4A3//7LuU8lI5v//su5TyUjmAACy7lnkSOYAAJb2U8lI5v//lvZTyUjm/7+W9lnkSOb/v7LuU8nQGf//su5TydAZAACy7lnk0BkAAJb2U8nQGf//lvZTydAZ/7+W9lnk0Bn/v1EJU8lI5v//UQlTyUjmAABRCVnkSOYAADYRU8lI5v//NhFTyUjm/782EVnkSOb/v1EJU8nQGf//UQlTydAZAABRCVnk0BkAADYRU8nQGf//NhFTydAZ/782EVnk0Bn/v/9//3//f/8//38AAP9//3//f/+//38AAP9/////f/8//38AAP9/////f/+//38AAP9//3//f/8//z//f/9//3//f/+//z//f/9/////f/8//z//f/9/////f/+//z//f/9//3//f/8//38AAP9//3//fwAA/3////9//z//fwAA/3////9/AAD/f/9//3//P/8//3//f/9//z//f/9/////f/8//z//f/9/////P/9//3//f/9//z//fwAA/3//f/9/AAD/f////3//P/9/AAD/f////38AAP9//3//f/8//z//f/9//3//P/9//3////9//z//P/9//3////8//3//f/9//3//P/9/AAD/f/9//38AAP9/////f/8//38AAP9/////fwAA/3//f/9//z//P/9//3//f/8//3//f////3//P/8//3//f////z//f/9//3//f/8//38AAP9//3//fwAA/3////9//z//fwAA/3////9/AAD/f/9//3//P/8//3//f/9//z//f/9/////f/8//z//f/9/////P/9//3//f/9//z//f/9//3////9//z//f////3//f/9//z//f/9//3////9//z//f////3//f/9//z//f/9//3////9//z//f////3//f/9//z//f/9//3////9//z//f////3//P/8//3//P/9//3//P/9/AAD/fwAA/3//P/8//3//P/9//3//P/9/AAD/fwAA/3//P/8//3//P/9//3//P/9/AAD/fwAA/3//P/8//3//P/9//3//P/9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_t21hs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5wj4g"]
+size = Vector3(3.6, 1.5, 2.3)
+
+[node name="desk_retro" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="Cube_199" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.805, 0, 0, 0, 0.805, 0, 0, 0, 0.805, 0, 0.7, 0)
+mesh = SubResource("ArrayMesh_htmsx")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.805, 0, 0, 0, 0.805, 0, 0, 0, 0.805, 0, 0.25725, 0)
+shape = SubResource("BoxShape3D_5wj4g")

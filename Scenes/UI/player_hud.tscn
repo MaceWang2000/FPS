@@ -1,0 +1,157 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlsu84wjfeisp"]
+
+[ext_resource type="Script" uid="uid://b1evw5228m7qr" path="res://Scripts/Player/player_hud_manager.gd" id="1_mdgm0"]
+[ext_resource type="PackedScene" uid="uid://cansthlk6b04g" path="res://Scenes/UI/ui_prompt_component.tscn" id="2_ifc88"]
+[ext_resource type="Texture2D" uid="uid://d2p0bjohadqx8" path="res://Assets/Texture/ui/crosshair021.png" id="2_yatt4"]
+[ext_resource type="Texture2D" uid="uid://ckc6y14ad4j5a" path="res://Assets/Texture/ui/keyboard_f.png" id="4_6tn8r"]
+[ext_resource type="Texture2D" uid="uid://csenh64nd7iad" path="res://Assets/Texture/ui/keyboard_g.png" id="5_myhdp"]
+[ext_resource type="Script" uid="uid://dmmhxcmeeoxqh" path="res://Scripts/Inventory/inventory_interface.gd" id="6_acruw"]
+[ext_resource type="PackedScene" uid="uid://c80du7pme5ka" path="res://Scenes/UI/inventory_ui.tscn" id="6_yyy6h"]
+[ext_resource type="PackedScene" uid="uid://62xwxi7375om" path="res://Scenes/UI/slot.tscn" id="8_odvir"]
+
+[node name="PlayerHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mdgm0")
+prompt_component = ExtResource("2_ifc88")
+prompt_text = "拿"
+prompt_text2 = "吃/喝"
+throw_prompt = "投掷"
+drop_text = "放下"
+
+[node name="Crosshair" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Crosshair"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 34.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yatt4")
+expand_mode = 1
+
+[node name="Prompt" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -43.0
+offset_right = 251.0
+offset_bottom = 85.93
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Prompt"]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 181.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(5, 0)
+
+[node name="FoodName" type="Label" parent="Prompt/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992188, 0.659843, 0.232544, 1)
+theme_override_font_sizes/font_size = 32
+text = "FoodName"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Prompt/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Prompt/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("4_6tn8r")
+
+[node name="Label" type="Label" parent="Prompt/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Interact
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Prompt/VBoxContainer"]
+layout_mode = 2
+
+[node name="InteractTexture2" type="TextureRect" parent="Prompt/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("5_myhdp")
+
+[node name="InteractPrompt2" type="Label" parent="Prompt/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Interact
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryInterface" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.00258, 0.95466)
+script = ExtResource("6_acruw")
+
+[node name="InventoryUI" parent="InventoryInterface" instance=ExtResource("6_yyy6h")]
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 78.0
+offset_bottom = 78.0
+scale = Vector2(0.998736, 1)
+
+[node name="ExternalInventory" parent="InventoryInterface" instance=ExtResource("6_yyy6h")]
+visible = false
+layout_mode = 0
+offset_left = 1238.8
+offset_top = 552.029
+offset_right = 1306.8
+offset_bottom = 620.029
+scale = Vector2(0.998736, 1)
+
+[node name="GrabbedSlot" parent="InventoryInterface" instance=ExtResource("8_odvir")]
+visible = false
+modulate = Color(1, 1, 1, 0.380392)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[connection signal="drop_slot_data" from="InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
+[connection signal="gui_input" from="InventoryInterface" to="InventoryInterface" method="_on_gui_input"]
+[connection signal="visibility_changed" from="InventoryInterface" to="InventoryInterface" method="_on_visibility_changed"]

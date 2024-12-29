@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=4 uid="uid://ckah3xn8qt4s5"]
+
+[ext_resource type="Shader" path="res://Assets/Shader/PS1Model.gdshader" id="1_jdrig"]
+[ext_resource type="Texture2D" uid="uid://bd1u6hckn5q1q" path="res://Assets/Texture/ScenesProp/集装箱1_集装.jpg" id="1_kfh5d"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u1c6u"]
+_surfaces = [{
+"aabb": AABB(-1.25105, 0, -2.68715, 2.5021, 3, 5.37431),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "材质.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jojwr"]
+resource_name = "集装箱1_立方体_001"
+_surfaces = [{
+"aabb": AABB(-1.25105, 0, -2.68715, 2.5021, 3, 5.37431),
+"attribute_data": PackedByteArray("AAAA/4F50RUAAAD/0Rch6QAAAP+36v/p/////4F56Hf/////fusw6v////+36iGJAAAA/0IWSxYAAAD/0uch6QAAAP92Ff/p/////0IWV3n/////bxMw6v////92FSGJAAAA/yUV0RUAAAD/0Re2iAAAAP9O64qH/////yUV6Hf/////fusqiP////9O64fpAAAA/3N6SxYAAAD/0ue2iAAAAP88FYqH/////3N6V3n/////bxMqiP////88FYfp"),
+"format": 34896613407,
+"index_count": 36,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
+"name": "材质.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP////8AAAAA//9U1QAAAAD///+/AAD///////8AAP////9U1QAA//////+/AAAAAAAA//8AAAAAAABU1QAAAAAAAP+/AAD//wAA//8AAP//AABU1QAA//8AAP+///8AAP///////wAA//9U1f//AAD///////////////////////9U1f////////////8AAAAA/////wAAAABU1f//AAAAAP///////wAA////////AABU1f////8AAP///3//f1RVVFX/f////3//f6qqqqr/f///////f1RVVFX/f///////f6mqqqr/f////3//f1RVVFX/v/9//3//f6qqqqr/v/9/////f1RVVFX/v/9/////f6mqqqr/v/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_u1c6u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5f8bj"]
+render_priority = 0
+shader = ExtResource("1_jdrig")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.0
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("1_kfh5d")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trfmm"]
+size = Vector3(2.5, 3, 5.3)
+
+[node name="集装箱1" type="Node3D"]
+
+[node name="立方体" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_jojwr")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_5f8bj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_trfmm")

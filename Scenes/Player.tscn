@@ -1,0 +1,436 @@
+[gd_scene load_steps=18 format=3 uid="uid://d0tjv3jlnbjat"]
+
+[ext_resource type="Script" uid="uid://jhq8ty6u5r11" path="res://Scripts/Player/Player.gd" id="1_qkg56"]
+[ext_resource type="PackedScene" uid="uid://c10gxx0djbclb" path="res://Scenes/interact_ray.tscn" id="2_c3ef0"]
+[ext_resource type="Resource" uid="uid://bfdav8i8s8sv0" path="res://Resource/Inventory/test_inv.tres" id="2_nn08x"]
+[ext_resource type="Script" uid="uid://cw2k46h8tp2kn" path="res://Scripts/Weapon/wieldable_sway.gd" id="4_4vo68"]
+[ext_resource type="PackedScene" uid="uid://dlsu84wjfeisp" path="res://Scenes/UI/player_hud.tscn" id="26_2k1wc"]
+[ext_resource type="Script" uid="uid://201kwdvh4n51" path="res://Scripts/Player/player_interaction_component.gd" id="32_6jgry"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xjude"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gogqn"]
+height = 1.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_txeq2"]
+radius = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m6lph"]
+radius = 0.4
+
+[sub_resource type="Animation" id="Animation_uasxe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nek/Head/Eyes/MainCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nek/Head/Eyes/MainCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Nek/Head/Eyes/MainCamera/WeaponManager/FPSRig/格洛克:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.51, -0.45, -0.695)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Nek/Head/Eyes/MainCamera/WeaponManager/FPSRig/格洛克:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.51844, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Nek/Head/Eyes/MainCamera/WeaponManager/FPSRig/格洛克:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Nek/Head/Eyes/MainCamera/WeaponManager/FPSRig/霰弹枪:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.245, -0.255, -0.245)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nek/Head/Eyes/MainCamera/WeaponManager/FPSRig/霰弹枪:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Nek/Head/Eyes/MainCamera/WeaponManager/FPSRig/霰弹枪:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Nek/Head:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Nek/Head:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iq8bx"]
+resource_name = "jump"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nek/Head/Eyes/MainCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nek/Head/Eyes/MainCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0523599, 0, 0.0349066), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_61j0m"]
+resource_name = "landing"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nek/Head/Eyes/MainCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nek/Head/Eyes/MainCamera:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0523599, 0, 0.0349066), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wwvr4"]
+resource_name = "lean_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nek/Head:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0174533, 0, 0.261799)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nek/Head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.8, 0.4, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4bobf"]
+resource_name = "lean_rest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nek/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.8, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nek/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0174533, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gb6ep"]
+resource_name = "lean_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Nek/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.8, 0.4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Nek/Head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0174533, 0, -0.261799)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ph7ll"]
+_data = {
+&"RESET": SubResource("Animation_uasxe"),
+&"jump": SubResource("Animation_iq8bx"),
+&"landing": SubResource("Animation_61j0m"),
+&"lean_left": SubResource("Animation_wwvr4"),
+&"lean_rest": SubResource("Animation_4bobf"),
+&"lean_right": SubResource("Animation_gb6ep")
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("ANIMATION_PLAYER", "iteam_target", "interact_ray", "food_target", "LEAN_RIGHT_COLLIDER", "LEAN_LEFHT_COLLIDER", "CHEST_RAY", "player_interaction_component") groups=["Player"]]
+collision_mask = 6
+platform_on_leave = 2
+platform_wall_layers = 6
+script = ExtResource("1_qkg56")
+jump_peak_time = 0.4
+jump_fall_time = 0.35
+jump_height = 1.5
+MOUSEN_SENSITIVITY = 0.1
+interact_distance = 2.0
+TOGGLE_CROUCH = true
+ANIMATION_PLAYER = NodePath("Nek/Head/Eyes/MainCamera/AnimationPlayer")
+iteam_target = NodePath("Nek/Head/IteamTarget")
+interact_ray = NodePath("Nek/Head/Eyes/MainCamera/InteractRay")
+food_target = NodePath("Nek/Head/FoodTarget")
+LEAN_RIGHT_COLLIDER = NodePath("Nek/Head/Eyes/MainCamera/Lean_right_collider")
+LEAN_LEFHT_COLLIDER = NodePath("Nek/Head/Eyes/MainCamera/Lean_lefht_collider")
+CHEST_RAY = NodePath("ChestRay")
+player_interaction_component = NodePath("PlayerInteractionComponent")
+player_hud = NodePath("PlayerHUD")
+inventory_data = ExtResource("2_nn08x")
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_xjude")
+
+[node name="CrouhchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CapsuleShape3D_gogqn")
+
+[node name="ChestRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1)
+collision_mask = 2
+
+[node name="StaidsAheadRayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
+target_position = Vector3(0, -0.55, 0)
+collision_mask = 2
+
+[node name="StaidsBelowRayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -0.75, 0)
+collision_mask = 2
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+target_position = Vector3(0, 2, 0)
+collision_mask = 2
+
+[node name="Nek" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Head" type="Node3D" parent="Nek"]
+unique_name_in_owner = true
+
+[node name="Eyes" type="Node3D" parent="Nek/Head"]
+unique_name_in_owner = true
+
+[node name="MainCamera" type="Camera3D" parent="Nek/Head/Eyes"]
+unique_name_in_owner = true
+cull_mask = 1048569
+
+[node name="InteractRay" parent="Nek/Head/Eyes/MainCamera" instance=ExtResource("2_c3ef0")]
+collision_mask = 260
+transition = 5
+easing = 2
+
+[node name="Lean_right_collider" type="ShapeCast3D" parent="Nek/Head/Eyes/MainCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0529189, 0, 0)
+visible = false
+shape = SubResource("SphereShape3D_txeq2")
+target_position = Vector3(0.85, 0, 0)
+collision_mask = 6
+
+[node name="Lean_lefht_collider" type="ShapeCast3D" parent="Nek/Head/Eyes/MainCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0511549, 0, 0)
+visible = false
+shape = SubResource("SphereShape3D_m6lph")
+target_position = Vector3(-0.85, 0, 0)
+collision_mask = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nek/Head/Eyes/MainCamera"]
+root_node = NodePath("../../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ph7ll")
+}
+
+[node name="WieldableContainer" type="Node3D" parent="Nek/Head/Eyes"]
+script = ExtResource("4_4vo68")
+
+[node name="FoodTarget" type="Node3D" parent="Nek/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+
+[node name="HeadRays" type="Node3D" parent="Nek/Head"]
+
+[node name="Center" type="RayCast3D" parent="Nek/Head/HeadRays"]
+target_position = Vector3(0, 0, -0.6)
+collision_mask = 2
+
+[node name="Left" type="RayCast3D" parent="Nek/Head/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+target_position = Vector3(0, 0, -0.6)
+collision_mask = 2
+
+[node name="Right" type="RayCast3D" parent="Nek/Head/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+target_position = Vector3(0, 0, -0.6)
+collision_mask = 2
+
+[node name="CenterUp" type="RayCast3D" parent="Nek/Head/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, -1.19209e-07, 1.03238e-07)
+target_position = Vector3(0, 0, -1.85)
+collision_mask = 2
+
+[node name="LeftUp" type="RayCast3D" parent="Nek/Head/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, -0.5, -1.19209e-07, 1.03238e-07)
+target_position = Vector3(0, 0, -1.85)
+collision_mask = 2
+
+[node name="RightUp" type="RayCast3D" parent="Nek/Head/HeadRays"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0.5, -1.19209e-07, 1.03238e-07)
+target_position = Vector3(0, 0, -1.85)
+collision_mask = 2
+
+[node name="IteamTarget" type="Marker3D" parent="Nek/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.7)
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="PlayerInteractionComponent" type="Node3D" parent="." node_paths=PackedStringArray("interaction_raycast", "interaction_target", "interaction_food_target")]
+script = ExtResource("32_6jgry")
+interaction_raycast = NodePath("../Nek/Head/Eyes/MainCamera/InteractRay")
+interaction_target = NodePath("../Nek/Head/IteamTarget")
+interaction_food_target = NodePath("../Nek/Head/FoodTarget")
+
+[node name="PlayerHUD" parent="." node_paths=PackedStringArray("player") instance=ExtResource("26_2k1wc")]
+player = NodePath("..")
+
+[connection signal="interactable_seen" from="Nek/Head/Eyes/MainCamera/InteractRay" to="PlayerInteractionComponent" method="_on_interact_ray_interactable_seen"]
+[connection signal="interactable_unseen" from="Nek/Head/Eyes/MainCamera/InteractRay" to="PlayerInteractionComponent" method="_on_interact_ray_interactable_unseen"]

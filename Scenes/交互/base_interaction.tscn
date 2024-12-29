@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp2cibla6uogg"]
+
+[ext_resource type="Script" uid="uid://b5fiaojrk1sw4" path="res://Scripts/道具/door_component.gd" id="1_u7ist"]
+
+[node name="BaseInteraction" type="Node3D"]
+script = ExtResource("1_u7ist")
+input_map_action = "interact"
+interaction_text = "打开"
+drop_text = "关闭"

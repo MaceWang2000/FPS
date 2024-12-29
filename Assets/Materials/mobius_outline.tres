@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cdtgf60nqelkc"]
+
+[ext_resource type="Shader" path="res://Assets/Shader/MobiusOutline.gdshader" id="1_wepcd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wepcd")
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/edge_threshold = 0.01
+shader_parameter/noise_frequency = 10.0
+shader_parameter/noise_offset_intensity = 0.002

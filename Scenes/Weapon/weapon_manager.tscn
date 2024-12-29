@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://budxg5wh0sdyf"]
+
+[sub_resource type="GDScript" id="GDScript_dwt8p"]
+script/source = "extends Node3D
+
+@export var player : Player
+@export var view_model_container : Node3D
+@export var world_model_container : Node3D
+@export var current_weapon : WeaponResource
+
+var current_weapon_view_model : Node3D
+var current_weapon_world_model : Node3D
+
+func _ready() -> void:
+	_update_weapon_model()
+	
+func _update_weapon_model() -> void:
+	if current_weapon != null:
+		if view_model_container and current_weapon.view_model:
+			current_weapon_view_model = current_weapon.view_model.instantiate()
+			view_model_container.add_child(current_weapon_view_model)
+			
+		if world_model_container and current_weapon.world_model:
+			current_weapon_world_model = current_weapon.world_model.instantiate()
+			world_model_container.add_child(current_weapon_world_model)
+			
+"
+
+[node name="WeaponManager" type="Node3D"]
+script = SubResource("GDScript_dwt8p")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cansthlk6b04g"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ui_prompt_component.gd" id="1_mwhe2"]
+[ext_resource type="PackedScene" uid="uid://c2j1d3w8d1hnp" path="res://Scenes/UI/interaction_button.tscn" id="2_7dm6w"]
+[ext_resource type="Texture2D" uid="uid://jbxd5nw72epp" path="res://Assets/Texture/ui/InputIconSheet_Kenney_Xbox.png" id="3_v5h7h"]
+
+[node name="UiPromptComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 218.0
+offset_bottom = 63.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_mwhe2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 113.0
+offset_bottom = 40.0
+
+[node name="Container" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="InteractionButton" parent="HBoxContainer/Container" instance=ExtResource("2_7dm6w")]
+scale = Vector2(1, 1)
+texture = ExtResource("3_v5h7h")
+
+[node name="InteractionText" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Interact"
+fit_content = true
+autowrap_mode = 0

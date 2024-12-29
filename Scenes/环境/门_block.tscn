@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmm8eoiqh6f8x"]
+
+[ext_resource type="Script" path="res://Scripts/道具/interaction_door.gd" id="1_o5u5v"]
+[ext_resource type="AudioStream" uid="uid://bccm26xjvlxau" path="res://Assets/Sound/doorOpen_1.ogg" id="2_xrdrr"]
+[ext_resource type="AudioStream" uid="uid://d3vnp3pykfcpa" path="res://Assets/Sound/doorClose_4.ogg" id="3_7vpeb"]
+[ext_resource type="PackedScene" uid="uid://cp2cibla6uogg" path="res://Scenes/交互/base_interaction.tscn" id="4_0x1r3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0jmrs"]
+size = Vector3(0.1, 2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63iws"]
+albedo_color = Color(0.808594, 0.650665, 0.650665, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kw3ay"]
+size = Vector3(0.07, 1.8, 0.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dbdom"]
+albedo_color = Color(0.619608, 0.552941, 0.494118, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_evhfw"]
+size = Vector3(0.1, 0.1, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kaqp4"]
+size = Vector3(1, 2, 0.1)
+
+[node name="门_Block" type="AnimatableBody3D" node_paths=PackedStringArray("mesh")]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_o5u5v")
+mesh = NodePath("MeshInstance3D5")
+open_rotation_deg = 95.0
+forward_direction = 2
+open_sound = ExtResource("2_xrdrr")
+close_sound = ExtResource("3_7vpeb")
+interaction_text_when_open = "关闭"
+interaction_text_when_close = "打开"
+
+[node name="BaseInteraction" parent="." instance=ExtResource("4_0x1r3")]
+drop_text = ""
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0563215, 1, 0)
+mesh = SubResource("BoxMesh_0jmrs")
+surface_material_override/0 = SubResource("StandardMaterial3D_63iws")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0.50786, 1, 0)
+mesh = SubResource("BoxMesh_kw3ay")
+surface_material_override/0 = SubResource("StandardMaterial3D_dbdom")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.954951, 1, 0)
+mesh = SubResource("BoxMesh_0jmrs")
+surface_material_override/0 = SubResource("StandardMaterial3D_63iws")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.505199, 1.95082, -1.96211e-08)
+mesh = SubResource("BoxMesh_evhfw")
+surface_material_override/0 = SubResource("StandardMaterial3D_63iws")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.505199, 0.0481516, -1.96211e-08)
+mesh = SubResource("BoxMesh_evhfw")
+surface_material_override/0 = SubResource("StandardMaterial3D_63iws")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0)
+shape = SubResource("BoxShape3D_kaqp4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = -26.0
+bus = &"SFX"
